@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Guess the Word Game</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    header{
+        width: 100%;
+        line-height: 15vh;
+        background-color: rgba(12, 206, 12, 0.678);       
+    }
+    h1{
+        text-align: center;
+        color: white;
+        font-size: 1.8rem;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+    }
+    section{
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(120, 120, 192);
+    }
+    .Area{
+        width: 50%;
+        height: 400px;
+        padding: 20px 0;
+        background-color: chocolate;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 0 10px 8px -8px black;
+    }
+    h4{
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    input{
+        width: 40%;
+        padding: 15px 0;
+        text-align: center;
+        border-radius: 25px;
+        outline: none;
+        border: 2px solid black;
+        color: black;
+        margin: 2rem 0;
+        font-size: 1.1rem;
+    }
+    button.btn{
+        font-weight: 600;
+        padding: 1rem 2rem;
+        background: white;
+        text-transform: uppercase;
+        transition-property: all;
+        transition-duration: 0.6s;
+    }
+    .btn:hover, .btn:focus{
+        letter-spacing: 0.150rem;
+        word-spacing: 0.2rem;
+    }
+    .hidden{
+        display: none;
+    }
+</style>
+<body>
+    <header>
+        <h1>Guess The Word!!</h1>
+    </header>
+    <section>
+        <div class="Area">
+            <h4 class="message"></h4>
+            <input type="text" class="hidden">
+            <button class="btn" onclick="buttonclick();">Click Here to Start</button>
+        </div>
+    </section> 
+</body>
+<script>
+    let messg = document.querySelector('.message')
+    let usermssg = document.querySelector('input')
+    let btn = document.querySelector('.btn')
+    let value = false
+    let word = ""
+    let scrambledword = ""
+    let array = ['android','java','dynamic','javascript','python','html','jquery','sql','Nodejs','Reactjs','Angularjs']
+    let buttonclick = () => {
+        if(!value)
+        {
+            value = true
+            btn.innerHTML = "GUESS"
+            $(".hidden").toggle()
+            word = randomword()
+            scrambledword = shuffleword(word)
+            messg.innerHTML = `Guess the Word: ${scrambledword}`
+        }
+        else
+        {
+            var val = usermssg.value
+            if(val === word)
+            {
+                value = false
+                messg.innerHTML = `Superb! You got the word. The word is ${word}`
+                btn.innerHTML = "AGAIN"
+                $(".hidden").toggle()
+                usermssg.value = ""
+            }
+            else
+            {
+                messg.innerHTML = `Oops! Wrong word. Try Again? <br> ${scrambledword}`
+            }
+        }
+    }
+    let randomword = () => {
+        var index = Math.floor(Math.random() * array.length)
+        var random = array[index]
+        return random
+    }
+    let shuffleword = (array) => {
+        var shuffle = array.split('')
+        shuffle.sort()
+        /* (function() {
+            return 0.5 - Math.random()
+        }) */
+        array = shuffle.join('')
+        return array
+    }    
+</script>
+</html>

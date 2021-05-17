@@ -9,19 +9,20 @@ Try adding more features to it and contribute in here!!
 
 1. GUI of the game!
 
-![](Images/game.png)
+![game](https://user-images.githubusercontent.com/77436945/118515845-63d4ef80-b753-11eb-9ebd-841ec1c2080f.png)
+
 
 
 2. After, you clicked on the button.
 
-![](Images/game1.png)
+![game1](https://user-images.githubusercontent.com/77436945/118516189-b9a99780-b753-11eb-9229-04fd44bb41c3.PNG)
 
 
 3. A Message is shown after correctly guessing the word.
 
-![](Images/game2.png)
+![game2](https://user-images.githubusercontent.com/77436945/118516223-c0380f00-b753-11eb-9482-67710e55bcae.PNG)
 
 
 4. Show another message if user fails to guess the word.
 
-![](Images/game3.png)
+![game4](https://user-images.githubusercontent.com/77436945/118516217-bf06e200-b753-11eb-994c-812566993f31.PNG)

@@ -1,5 +1,7 @@
 # GUESS THE WORD
 
+## ABOUT
+
 A word guessing game for single player. Guess the scrambled word or try again if you fail to guess the correct word.
 
 [`CLICK HERE`](https://shik28tech.github.io/Basic_Game/Scramble_Word_Game) to play the game.
